@@ -16,3 +16,6 @@ reap_all
 .vscode/
 .idea/
 .DS_Store
+
+# Scratch output from running the demos
+out_*.txt

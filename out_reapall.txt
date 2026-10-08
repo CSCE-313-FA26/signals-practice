@@ -1,5 +1,0 @@
-Child 1 is exiting
-Child 2 is exiting
-Child 3 is exiting
-Child 4 is exiting
-Child 5 is exiting
