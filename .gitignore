@@ -1,0 +1,18 @@
+# Build output. `make` regenerates all of it, so none of it belongs in git.
+sigint1
+sigint2
+sigaction1
+sigaction2
+sigaction3
+siginfo
+sigprocmask1
+sigprocmask2
+sigusr
+sleep
+proc_reap
+reap_all
+
+# Editor and OS noise
+.vscode/
+.idea/
+.DS_Store
