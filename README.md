@@ -66,10 +66,13 @@ default action takes over — quit, with a core dump.
 then in another terminal:
 
 ```bash
-ps --ppid $(pgrep -x reap_all) -o pid,stat,comm
+ps -C reap_all -o pid,ppid,stat,comm
 ```
 
-Five children, every one in state `Z`. The handler prints but never calls
+Six lines: the parent in state `S`, and five children in state `Z`. A zombie
+keeps its parent's name, so asking for the children of one pid does not work
+here — `pgrep -x reap_all` matches the zombies too, and `ps --ppid` rejects a
+list of six pids. The handler prints but never calls
 `wait`, so the kernel keeps each exit status for a parent that never collects
 it. `./proc_reap` is the same program with `wait(0)` in the handler, and ends
 with no children and no zombies.
